@@ -1,0 +1,117 @@
+:root {
+  --time-transition: 0.5s;
+  --text-color: #3B4387FF;
+}
+
+@property --color-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #090914;
+}
+@property --color-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #19193A;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background: linear-gradient(0deg, var(--color-1) 0%, var(--color-2) 100%);
+  
+  transition: --color-1 var(--time-transition) linear, --color-2 var(--time-transition) ;
+}
+
+#buttonTest {
+  z-index: 0;
+  width: 140px;
+  height: 60px;
+  background-color: #00A0FF;
+  font-size: 24px;
+  border: none;
+  box-shadow: 0 0 50px #005B91;
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+  transition: background-color var(--time-transition) linear, box-shadow var(--time-transition) linear;
+}
+
+#circle {
+  z-index: 1;
+  pointer-events: none;
+  
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: #1D235D;
+  border-radius: 50px;
+  position: absolute;
+  left: 118px;
+  
+  transition: background var(--time-transition) linear;
+}
+
+@keyframes circleMove {
+  0% {left: 118px; width: 45px; height: 45px;}
+  20% {left: 145px; width: 73px; height: 35px;}
+  30% {left: 180px; width: 90px; height: 35px;}
+  50% {left: 170px; width: 55px; height: 55px;}
+  70% {left: 215px; width: 40px; height: 40px;}
+  100% {left: 197px; width: 45px; height: 45px;}
+}
+
+@keyframes circleMoveReversed {
+  0% {left: 197px; width: 45px; height: 45px;}
+  20% {left: 145px; width: 73px; height: 35px;}
+  30% {left: 93px; width: 90px; height: 35px;}
+  50% {left: 135px; width: 55px; height: 55px;}
+  70% {left: 105px; width: 40px; height: 40px;}
+  100% {left: 118px; width: 45px; height: 45px;}
+}
+
+@keyframes sizeAnimButton {
+  0% {width: 145px; height: 60px;}
+  20% {width: 90px; height: 50px;}
+  30% {width: 195px; height: 50px;}
+  50% {width: 110px; height: 70px;}
+  70% {width: 170px; height: 55px}
+  100% {width: 145px; height: 60px;}
+}
+
+@keyframes sizeAnimButtonReversed {
+  0% {width: 145px; height: 60px;}
+  20% {width: 90px; height: 50px;}
+  30% {width: 195px; height: 50px;}
+  50% {width: 110px; height: 70px;}
+  70% {width: 170px; height: 55px}
+  100% {width: 145px; height: 60px;}
+}
+
+#textTest {
+  color: var(--text-color);
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%);
+  
+  transition: color var(--time-transition) linear;
+}
+
+#cps {
+  color: var(--text-color);
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  
+  transition: color var(--time-transition) linear;
+}
