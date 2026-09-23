@@ -26,6 +26,12 @@ body {
   transition: --color-1 var(--time-transition) linear, --color-2 var(--time-transition) ;
 }
 
+#buttonPosition {
+  position: relative;
+  width: 140px;
+  height: 60px;
+}
+
 #buttonTest {
   z-index: 0;
   width: 140px;
@@ -53,7 +59,9 @@ body {
   background: #1D235D;
   border-radius: 50px;
   position: absolute;
-  left: 118px;
+  left: 119px;
+  top: 50%;
+  transform: translate(-110px, -50%);
   
   transition: background var(--time-transition) linear;
 }
