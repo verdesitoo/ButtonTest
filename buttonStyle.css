@@ -61,7 +61,7 @@ body {
   position: absolute;
   left: 119px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-110px, -50%);
   
   transition: background var(--time-transition) linear;
 }
